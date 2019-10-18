@@ -5,7 +5,7 @@ from conans import ConanFile, CMake, tools
 
 class LibheifTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
-    generators = "cmake_paths"
+    generators = "cmake"
 
     def build(self):
         cmake = CMake(self)
