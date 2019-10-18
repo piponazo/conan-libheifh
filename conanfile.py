@@ -16,7 +16,7 @@ class LibheifConan(ConanFile):
 
     def source(self):
         # TODO: Point to the upstream repo + use tarballs
-        self.run("git clone git@github.com:piponazo/libheif.git --branch cmakeImprovements --depth 1")
+        self.run("git clone https://github.com/piponazo/libheif.git --branch cmakeImprovements --depth 1")
         tools.replace_in_file("libheif/CMakeLists.txt", "cmake_policy(SET CMP0054 NEW)",
                               '''cmake_policy(SET CMP0054 NEW)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
