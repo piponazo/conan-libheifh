@@ -37,6 +37,7 @@
 
 #include <libheif/heif.h>
 
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <memory>
