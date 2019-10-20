@@ -41,7 +41,6 @@
 #include <fstream>
 #include <iostream>
 #include <memory>
-#include <getopt.h>
 #include <assert.h>
 
 
@@ -60,14 +59,6 @@ info -w 20012 -o out.265 *file
 info -d // dump
  */
 
-static struct option long_options[] = {
-  //{"write-raw", required_argument, 0, 'w' },
-  //{"output",    required_argument, 0, 'o' },
-  {"dump-boxes", no_argument,      0, 'd' },
-  {"help",       no_argument,      0, 'h' },
-  {0,         0,                 0,  0 }
-};
-
 const char* fourcc_to_string(uint32_t fourcc) {
   static char fcc[5];
   fcc[0] = (char)((fourcc>>24) & 0xFF);
@@ -78,60 +69,22 @@ const char* fourcc_to_string(uint32_t fourcc) {
   return fcc;
 }
 
-void show_help(const char* argv0)
-{
-    fprintf(stderr," heif-info  libheif version: %s\n",heif_get_version());
-    fprintf(stderr,"------------------------------------\n");
-    fprintf(stderr,"usage: heif-info [options] image.heic\n");
-    fprintf(stderr,"\n");
-    fprintf(stderr,"options:\n");
-    //fprintf(stderr,"  -w, --write-raw ID   write raw compressed data of image 'ID'\n");
-    //fprintf(stderr,"  -o, --output NAME    output file name for image selected by -w\n");
-    fprintf(stderr,"  -d, --dump-boxes     show a low-level dump of all MP4 file boxes\n");
-    fprintf(stderr,"  -h, --help           show help\n");
-}
-
 int main(int argc, char** argv)
 {
+  if (argc != 2) {
+    std::cerr << "incorrect number of arguments" << std::endl;
+    return EXIT_FAILURE;
+  }
   bool dump_boxes = false;
 
   bool write_raw_image = false;
   heif_item_id raw_image_id;
   std::string output_filename = "output.265";
 
-  while (true) {
-    int option_index = 0;
-    int c = getopt_long(argc, argv, "dh", long_options, &option_index);
-    if (c == -1)
-      break;
-
-    switch (c) {
-    case 'd':
-      dump_boxes = true;
-      break;
-    case 'h':
-      show_help(argv[0]);
-      return 0;
-    case 'w':
-      write_raw_image = true;
-      raw_image_id = atoi(optarg);
-      break;
-    case 'o':
-      output_filename = optarg;
-      break;
-    }
-  }
-
-  if (optind != argc-1) {
-    show_help(argv[0]);
-    return 0;
-  }
-
-
   (void)raw_image_id;
   (void)write_raw_image;
 
-  const char* input_filename = argv[optind];
+  const char* input_filename = argv[1];
 
   // ==============================================================================
   //   show MIME type
