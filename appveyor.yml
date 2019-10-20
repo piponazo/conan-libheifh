@@ -4,9 +4,12 @@ environment:
     PYTHON: "C:\\Python37"
 
     CONAN_REFERENCE: "libheif/1.5.1"
-    CONAN_USERNAME: "user"
+    CONAN_USERNAME: "piponazo"
     CONAN_LOGIN_USERNAME: "user"
-    CONAN_CHANNEL: "channel"
+    CONAN_CHANNEL: "testing"
+    CONAN_UPLOAD: "https://api.bintray.com/conan/piponazo/piponazo"
+    CONAN_STABLE_BRANCH_PATTERN: "release/*"
+    CONAN_UPLOAD_ONLY_WHEN_STABLE: 1 # Will only upload when the branch matches "release/*"
     
     matrix:
         - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
