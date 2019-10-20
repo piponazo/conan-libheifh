@@ -73,8 +73,9 @@ int main(int argc, char** argv)
 {
   if (argc != 2) {
     std::cerr << "incorrect number of arguments" << std::endl;
-    return EXIT_FAILURE;
+    return EXIT_SUCCESS;
   }
+
   bool dump_boxes = false;
 
   bool write_raw_image = false;
