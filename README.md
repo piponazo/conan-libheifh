@@ -9,5 +9,5 @@ https://github.com/strukturag/libheif
 |:--------:|:---------:|:-------------:|
 |
 [ No bintray packages yet |  
-[![Build status](https://ci.appveyor.com/api/projects/status/cvbua7kxm7hv4e26/branch/master?svg=true)](https://ci.appveyor.com/project/piponazo/conan-libheifh/branch/master) | 
-[![Build Status](https://travis-ci.org/piponazo/conan-libheifh.svg?branch=master)](https://travis-ci.org/piponazo/conan-libheifh) | 
+[![Build status](https://ci.appveyor.com/api/projects/status/cvbua7kxm7hv4e26/branch/stable/1.5.1?svg=true)](https://ci.appveyor.com/project/piponazo/conan-libheifh/branch/stable/1.5.1) | 
+[![Build Status](https://travis-ci.org/piponazo/conan-libheifh.svg?branch=stable/1.5.1)](https://travis-ci.org/piponazo/conan-libheifh) | 
