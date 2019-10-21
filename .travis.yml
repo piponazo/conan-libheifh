@@ -2,8 +2,8 @@
 env:
    global:
      - CONAN_REFERENCE: "libheif/1.5.1"
-     - CONAN_USERNAME: "user"
-     - CONAN_LOGIN_USERNAME: "user"
+     - CONAN_USERNAME: "piponazo"
+     - CONAN_LOGIN_USERNAME: "piponazo"
      - CONAN_CHANNEL: "testing"
      - CONAN_STABLE_BRANCH_PATTERN: "stable/*"
      - CONAN_UPLOAD_ONLY_WHEN_STABLE: 1 # Will only upload when the branch matches "stable/*"
